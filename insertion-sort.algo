@@ -1,0 +1,24 @@
+ALGORITHM insertion-sort
+VAR
+    arr : ARRAY_OF INTEGER[100];
+    i,j,n:INTEGER;
+BEGIN
+    n:=arr[99]
+    IF (n<arr[0]) THEN
+        FOR i FROM 99 TO 1 STEP -1 DO
+            arr[i]:=arr[i-1]
+        END_FOR
+        arr[0]:=n
+    ELSE_IF (n>arr[0] and n<arr[98]) THEN
+        FOR i FROM 0 TO 98 STEP 1  DO
+            IF (n>arr[i] and n<arr[i+1]) THEN
+                FOR j FROM 99 TO i+2 STEP -1  DO
+                    arr[j]:=arr[j-1]
+                END_FOR
+                arr[i+1]:=n;
+                break;
+            END_IF
+        END_FOR
+    END_IF
+    Write (arr)
+END
